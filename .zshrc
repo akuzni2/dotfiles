@@ -1,10 +1,12 @@
 
-
 # Basic ZSH Autosuggestions | https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Starship | https://starship.rs/guide/
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[cyan]%}%2d%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
 HISTSIZE=10000
@@ -23,8 +25,6 @@ _comp_options+=(globdots)		# Include hidden files.
 [ -f "$HOME/.config/personal-aliasrc" ] && source "$HOME/.config/personal-aliasrc" 
 [ -f "$HOME/.config/other-aliasrc" ] && source "$HOME/.config/other-aliasrc" # Like maybe for work or something
 
-# Load zsh-syntax-highlighting; should be last.
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 # Conda autocomplete | https://github.com/esc/conda-zsh-completion/blob/master/_conda
 fpath+=~/.zsh/conda-zsh-completion
@@ -62,3 +62,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# Load zsh-syntax-highlighting; should be last.
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

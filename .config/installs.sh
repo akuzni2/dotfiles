@@ -45,6 +45,9 @@ brew install --cask font-hack-nerd-font # Or any other font
 # Install starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
+# ZSH syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
 
 
