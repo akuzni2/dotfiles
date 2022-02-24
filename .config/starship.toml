@@ -11,3 +11,9 @@ disabled = true
 
 [aws]
 format = ''
+
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
