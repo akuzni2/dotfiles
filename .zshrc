@@ -21,7 +21,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc" 
+[ -f "$HOME/.config/personal-aliasrc" ] && source "$HOME/.config/personal-aliasrc" 
 
 # Load zsh-syntax-highlighting; should be last.
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
@@ -30,9 +30,8 @@ _comp_options+=(globdots)		# Include hidden files.
 fpath+=~/.zsh/conda-zsh-completion
 compinit
 
-# ------- Kubernetes-------------
+# ------- Kubernetes Autocompletion -------------
 source <(kubectl completion zsh)
-alias k=kubectl
 compdef __start_kubectl k
 
 # for Bare Git dotfiles repo
