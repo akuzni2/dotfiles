@@ -15,20 +15,18 @@ HISTFILE=~/.cache/zsh/history
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Basic auto/tab complete: Settings that will give a menu I can select from
-autoload -Uz compinit
+autoload -Uz compinit # only call this once 
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/personal-aliasrc" ] && source "$HOME/.config/personal-aliasrc" 
 [ -f "$HOME/.config/other-aliasrc" ] && source "$HOME/.config/other-aliasrc" # Like maybe for work or something
 
-
 # Conda autocomplete | https://github.com/esc/conda-zsh-completion/blob/master/_conda
 fpath+=~/.zsh/conda-zsh-completion
-compinit
+compinit # should only call this once
 
 # ------- Kubernetes -------------
 source <(kubectl completion zsh)

@@ -13,3 +13,8 @@ alias ktx='kubectl ctx'
 alias kns='kubectl ns'
 alias kpo='kubectl get pod'
 alias k=kubectl
+
+
+# -- GIT Aliases
+alias gcl='git config -l --show-origin'
+alias gc='git config'
