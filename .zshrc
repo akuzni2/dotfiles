@@ -1,6 +1,8 @@
-
 # Basic ZSH Autosuggestions | https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Other options
+setopt autocd
 
 # Starship | https://starship.rs/guide/
 # eval "$(starship init zsh)"
@@ -9,10 +11,11 @@ autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[cyan]%}%2d%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.cache/zsh/history
-export HISTTIMEFORMAT="%d/%m/%y %T "
+setopt EXTENDED_HISTORY
+
 
 # Basic auto/tab complete: Settings that will give a menu I can select from
 autoload -Uz compinit # only call this once 

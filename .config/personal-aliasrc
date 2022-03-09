@@ -1,7 +1,9 @@
 ### ALIAS FILE FOR PERSONAL USE. THINGS THAT DONT REALLY CHANGE BETWEEN MY WORK ENVIRONMENTS
 
-alias ll='ls -lah'
+alias l='ls -lah'
 alias ls='ls -GFh'
+alias hist='history -i 1' # start from first entry and and `-i` means show the datetime 
+
 
 # For Jupyter Notebook
 alias light='jt -t grade3 -T -N -f fira -cellw 95%' 
@@ -13,8 +15,8 @@ alias ktx='kubectl ctx'
 alias kns='kubectl ns'
 alias kpo='kubectl get pod'
 alias k=kubectl
-
+alias kge='kubectl get events --sort-by='.lastTimestamp''
 
 # -- GIT Aliases
-alias gcl='git config -l --show-origin'
+alias gcl='git config -l --show-scope --show-origin'
 alias gc='git config'
