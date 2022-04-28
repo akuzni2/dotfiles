@@ -2,10 +2,22 @@ tag: terminal
 and tag: user.kubectl
 -
 
+cube namespace:
+    "kubens "
+    key(enter)
+
+cube context:
+    "kubectx "
+    key(enter)
+
 cube watch logs:
     "kubectl logs -f "
 
-cube pod:
+cube check all:
+    "kubectl get pod -A"
+    key(enter)
+
+cube check:
     "kubectl get pod "
     key(enter)
 
