@@ -12,24 +12,24 @@ PS1="%B%{$fg[red]%}[%{$fg[cyan]%}%2d%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
 HISTSIZE=100000
-SAVEHIST=$HISTSIZE
-HISTFILE=~/.cache/zsh/history
-setopt EXTENDED_HISTORY
+#SAVEHIST=$HISTSIZE
+#HISTFILE=~/.cache/zsh/history
+#setopt EXTENDED_HISTORY
 
 
 # Basic auto/tab complete: Settings that will give a menu I can select from
-autoload -Uz compinit # only call this once 
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-_comp_options+=(globdots)		# Include hidden files.
+autoload -Uz compinit # only call this once
+compinit # call once
+#zstyle ':completion:*' menu select
+#zmodload zsh/complist
+#_comp_options+=(globdots)		# Include hidden files.
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/personal-aliasrc" ] && source "$HOME/.config/personal-aliasrc" 
+[ -f "$HOME/.config/personal-aliasrc" ] && source "$HOME/.config/personal-aliasrc"
 [ -f "$HOME/.config/other-aliasrc" ] && source "$HOME/.config/other-aliasrc" # Like maybe for work or something
 
 # Conda autocomplete | https://github.com/esc/conda-zsh-completion/blob/master/_conda
-fpath+=~/.zsh/conda-zsh-completion
-compinit # should only call this once
+# fpath+=~/.zsh/conda-zsh-completion
 
 # ------- Kubernetes -------------
 source <(kubectl completion zsh)
@@ -39,10 +39,10 @@ compdef __start_kubectl k
 PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # for Bare Git dotfiles repo
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+#alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # # Fuzzy | https://github.com/junegunn/fzf to get kubectx/kubens to give a menu option
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Java version manager
 [ -s "/Users/alex.kuznicki/.jabba/jabba.sh" ] && source "/Users/alex.kuznicki/.jabba/jabba.sh"
