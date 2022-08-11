@@ -18,14 +18,18 @@ HISTSIZE=100000
 
 
 # Basic auto/tab complete: Settings that will give a menu I can select from
+<<<<<<< HEAD
 autoload -Uz compinit # only call this once 
+=======
+autoload -Uz compinit # only call this once
+>>>>>>> dc962d21aeada404b980041e6eeacda3631aeefb
 compinit # call once
 #zstyle ':completion:*' menu select
 #zmodload zsh/complist
 #_comp_options+=(globdots)		# Include hidden files.
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/personal-aliasrc" ] && source "$HOME/.config/personal-aliasrc" 
+[ -f "$HOME/.config/personal-aliasrc" ] && source "$HOME/.config/personal-aliasrc"
 [ -f "$HOME/.config/other-aliasrc" ] && source "$HOME/.config/other-aliasrc" # Like maybe for work or something
 
 # Conda autocomplete | https://github.com/esc/conda-zsh-completion/blob/master/_conda
