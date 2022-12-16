@@ -18,11 +18,7 @@ HISTSIZE=100000
 
 
 # Basic auto/tab complete: Settings that will give a menu I can select from
-<<<<<<< HEAD
 autoload -Uz compinit # only call this once 
-=======
-autoload -Uz compinit # only call this once
->>>>>>> dc962d21aeada404b980041e6eeacda3631aeefb
 compinit # call once
 #zstyle ':completion:*' menu select
 #zmodload zsh/complist
